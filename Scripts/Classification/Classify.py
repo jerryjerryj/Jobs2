@@ -12,7 +12,7 @@ def plot_confusion_matrix(cm,my_tags, title='Confusion matrix', cmap=plt.cm.Blue
     plt.colorbar()
     tick_marks = np.arange(len(my_tags))
     target_names = my_tags
-    plt.xticks(tick_marks, target_names, rotation=45)
+    plt.xticks(tick_marks, target_names, rotation=90)
     plt.yticks(tick_marks, target_names)
     plt.tight_layout()
     plt.ylabel('True label')
@@ -25,7 +25,7 @@ vectors = df['vectors'].tolist()
 classes = df['classes'].tolist()
 
 
-X_train, X_test, Y_train, Y_test = train_test_split(vectors, classes,test_size=0.30)
+X_train, X_test, Y_train, Y_test = train_test_split(vectors, classes,test_size=0.3)
 
 model = LogisticRegression()
 
@@ -39,10 +39,10 @@ plot_confusion_matrix(cm,['Администратор БД',
 'Архитектор ПО',
 'Программист',
 'Разработчик Web',
-'Специалист по BigData',
-'Специалист по интернет-маркетингу',
-'Специалист по информационным ресурсам',
-'Специалист по тестированию',
+'Спец. по BigData',
+'Спец. по интернет-маркетингу',
+'Спец. по информ. ресурсам',
+'Спец. по тестированию',
 'Технический писатель',
 'Руководитель проектов'])
 
