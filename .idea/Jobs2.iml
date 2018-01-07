@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Data" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Data/Marked" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Data/ProfStandarts" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Data/TokenizedSentences" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Data/Wiki" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Excluded" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="projectConfiguration" value="Nosetests" />
+    <option name="PROJECT_TEST_RUNNER" value="Nosetests" />
+  </component>
+</module>
