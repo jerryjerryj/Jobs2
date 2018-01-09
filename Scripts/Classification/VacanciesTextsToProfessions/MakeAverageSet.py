@@ -1,5 +1,11 @@
-import gensim, pickle, glob, pandas
-from Scripts.Classification.Averaging import SentenceToVector
+import glob
+import pickle
+
+import gensim
+import pandas
+
+from Scripts.Tools.Averaging import SentenceToVector
+
 
 def GetClasses(pathToMarked):
     filesPaths = glob.glob(pathToMarked + "\*.txt")

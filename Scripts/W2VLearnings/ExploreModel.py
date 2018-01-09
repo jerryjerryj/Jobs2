@@ -1,5 +1,8 @@
-import gensim, pickle
-from Scripts.Classification.Averaging import SentenceToVector
+import pickle
+
+import gensim
+
+from Scripts.Tools.Averaging import SentenceToVector
 
 vacanciesPath = 'F:\My_Pro\Python\Jobs2\Data\TokenizedSentences\Marked.p'
 vacanciesTokenized = pickle.load(open(vacanciesPath, "rb"))

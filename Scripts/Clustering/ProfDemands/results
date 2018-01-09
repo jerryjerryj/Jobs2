@@ -1,0 +1,9 @@
+AgglomerativeClustering(n_clusters=10)
+v_measure 0.551185944139
+completeness 0.529546463077
+homogenity 0.574669334252
+
+KMeans(n_clusters=10)
+v_measure 0.557879238547
+completeness 0.536245509037
+homogenity 0.581331885816
