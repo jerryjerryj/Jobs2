@@ -24,7 +24,7 @@ def TokenizeSentences(rawSentences):
             sentences.append(cleaned_set)
     return sentences
 
-TARGET = '\ProfStandarts'
+TARGET = '\MarkedDemands'
 
 pathSource = 'F:\My_Pro\Python\Jobs2\Data'
 pathTokenized = 'F:\My_Pro\Python\Jobs2\Data\TokenizedSentences'

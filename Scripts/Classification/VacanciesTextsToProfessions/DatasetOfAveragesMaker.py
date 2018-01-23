@@ -19,8 +19,8 @@ def GetClasses(pathToMarked):
     return classes
 
 ###CHANGE THIS
-vacanciesPicklesPath = 'F:\My_Pro\Python\Jobs2\Data\TokenizedSentences\Marked.p'
-vacanciesMarkedDir = 'F:\My_Pro\Python\Jobs2\Data\Marked'
+vacanciesPicklesPath = 'F:\My_Pro\Python\Jobs2\Data\TokenizedSentences\MarkedDemands.p'
+vacanciesMarkedDir = 'F:\My_Pro\Python\Jobs2\Data\MarkedDemands'
 ###/CHANGE THIS
 
 modelPath = 'F:\My_Pro\Python\Jobs2\Scripts\W2VLearnings\model'
@@ -41,4 +41,4 @@ df['vectors'] = vectors
 
 #shuffle
 df  = df.sample(frac=1).reset_index(drop=True)
-pickle.dump( df, open('DatasetFromMarked.p', "wb" ) )
+pickle.dump( df, open('DatasetFromMarkedDemands.p', "wb" ) )
