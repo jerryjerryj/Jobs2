@@ -24,20 +24,23 @@ def TokenizeSentences(rawSentences):
             sentences.append(cleaned_set)
     return sentences
 
-TARGET = '\MarkedDemands'
 
-pathSource = 'F:\My_Pro\Python\Jobs2\Data'
-pathTokenized = 'F:\My_Pro\Python\Jobs2\Data\TokenizedSentences'
-filesPaths = glob.glob(pathSource+ TARGET+"\*.txt")
+if __name__ == "__main__":
 
-totalSentences = []
-for filePath in filesPaths:
-    with open(filePath, encoding='utf-8') as f:
-        content = f.readlines()
-        content = [x.strip() for x in content]
-        content = [x.replace('\t',' ') for x in content]
-        totalSentences.extend(content)
+    TARGET = '\Wiki'
 
-tokenized = TokenizeSentences(totalSentences)
-pickle.dump( tokenized, open(pathTokenized+TARGET+'.p', "wb" ) )
+    pathSource = 'F:\My_Pro\Python\Jobs2\Data'
+    pathTokenized = 'F:\My_Pro\Python\Jobs2\Data\TokenizedSentences'
+    filesPaths = glob.glob(pathSource+ TARGET+"\*.txt")
+
+    totalSentences = []
+    for filePath in filesPaths:
+        with open(filePath, encoding='utf-8') as f:
+            content = f.readlines()
+            content = [x.strip() for x in content]
+            content = [x.replace('\t',' ') for x in content]
+            totalSentences.extend(content)
+
+    tokenized = TokenizeSentences(totalSentences)
+    pickle.dump( tokenized, open(pathTokenized+TARGET+'.p', "wb" ) )
 

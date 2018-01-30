@@ -20,4 +20,4 @@ sentences = CollectSentences(pathSource)
 PrintSourceDataStats(sentences)
 
 model = gensim.models.Word2Vec(sentences, min_count=2, workers=10, iter=100)
-model.save('model')
+model.save('model(add)')
