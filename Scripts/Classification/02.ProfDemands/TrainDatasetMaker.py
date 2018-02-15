@@ -1,8 +1,10 @@
-from  gensim.models import Word2Vec
-import pandas as pd
 import pickle
+
+import pandas as pd
+from  gensim.models import Word2Vec
+
+from Scripts.Preprocessings.Tokenize import TokenizeSentences
 from Scripts.Tools.Averaging import SentenceToVector
-from Scripts.W2VLearnings.TokenizeText import TokenizeSentences
 
 profName = '0Администратор БД'
 pathToProfessionDemands = 'F:\My_Pro\Python\Jobs2\Data\ProfStandarts\\'+profName+'.txt'
