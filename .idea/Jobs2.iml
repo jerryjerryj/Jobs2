@@ -17,6 +17,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Scripts/Preprocessings/TokenizedDemands" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scripts/Preprocessings/TextModelsCreations/ModelsDemandsTFIDF" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scripts/Preprocessings/DSCreations/DemandsDatasets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Data/Books" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Scripts/Preprocessings/TokenizedBooks" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Scripts/Preprocessings/TextModelsCreations/ModelsBooks" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Excluded" />
     </content>
     <orderEntry type="inheritedJdk" />

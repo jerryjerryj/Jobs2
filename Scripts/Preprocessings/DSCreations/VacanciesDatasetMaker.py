@@ -6,11 +6,13 @@ from sklearn.naive_bayes import MultinomialNB
 
 #####   CHANGEABLE PARAMS
 vacanciesPicklesPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\Tokenized\Vacancies.p'
+vacanciesNsPicklesPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\Tokenized\\NS\Vacancies.ns.p'
 vacanciesMarkedDir = 'F:\My_Pro\Python\Jobs2\Data\Vacancies'
 modelPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\W2V.model'
+ftModelPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\FastText.model'
 modelTfIdfPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\TfIdf.model'
 DSOutputPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\DSCreations\DataSets'
-modelType = 'tfidf' # w2v tfidf w2vtfidf fasttext
+modelTypes = ['w2vtfidf', 'w2v', 'tfidf', 'ft','d2v']
 #####
 
 
@@ -59,6 +61,16 @@ def SentenceToTfIdf(sentence, tfidf):
     return vector
     #return [sum(vector) / float(len(vector))]
 
+def SentenceToFastTextVector(sentence,ft):
+    vectors = pandas.DataFrame()
+    index = 0
+    for word in sentence:
+        vectors[index] = ft[word]
+        index += 1
+    vectors = vectors.transpose()
+    vector = vectors.mean().values.tolist()
+    return vector
+
 '''def SentenceToTfIdf(sentences):
     spaced = [' '.join(s) for s in sentences]
     count_vect = CountVectorizer()
@@ -71,29 +83,35 @@ def SentenceToTfIdf(sentence, tfidf):
 
 if __name__ == "__main__":
     vacanciesTokenized = pickle.load(open(vacanciesPicklesPath, "rb"))
+    vacanciesTokenizedNS = pickle.load(open(vacanciesNsPicklesPath, "rb"))
     model = gensim.models.Word2Vec.load(modelPath)
+    ftModel = gensim.models.FastText.load(ftModelPath)
     tfIdf= pickle.load(open(modelTfIdfPath, 'rb'))
 
     df = pandas.DataFrame()
     df['classes'] = GetMulticlasses(vacanciesMarkedDir)
+    for modelType in modelTypes:
+        vectors = []
+        outName = ''
+        if modelType == 'w2v':
+            for vacancy in vacanciesTokenized:
+                vectors.append(SentenceToAverageWeightedVector(model.wv, vacancy))
+            outName = '\\W2V.dataset'
+        elif modelType == 'tfidf':
+            #vectors = list( SentenceToTfIdf(vacanciesTokenized))
+            for vacancy in vacanciesTokenized:
+               vectors.append(SentenceToTfIdf(vacancy,tfIdf))
+            outName = '\\TfIdf.dataset'
+        elif modelType == 'w2vtfidf':
+            for vacancy in vacanciesTokenized:
+                vectors.append(SentenceToAverageTfIdfWeightedVector(model.wv, vacancy,tfIdf))
+            outName = '\\W2VTfIdf.dataset'
+        elif modelType == 'ft':
+            for vacancy in vacanciesTokenizedNS:
+                vectors.append(SentenceToFastTextVector(vacancy,ftModel))
+            outName = '\\FT.dataset'
+        df['vectors'] = vectors
 
-    vectors = []
-    outName = ''
-    if modelType == 'w2v':
-        for vacancy in vacanciesTokenized:
-            vectors.append(SentenceToAverageWeightedVector(model.wv, vacancy))
-        outName = '\\W2V.dataset'
-    elif modelType == 'tfidf':
-        #vectors = list( SentenceToTfIdf(vacanciesTokenized))
-        for vacancy in vacanciesTokenized:
-           vectors.append(SentenceToTfIdf(vacancy,tfIdf))
-        outName = '\\TfIdf.dataset'
-    elif modelType == 'w2vtfidf':
-        for vacancy in vacanciesTokenized:
-            vectors.append(SentenceToAverageTfIdfWeightedVector(model.wv, vacancy,tfIdf))
-        outName = '\\W2VTfIdf.dataset'
-    df['vectors'] = vectors
+        df = df.sample(frac=1).reset_index(drop=True)
 
-    df = df.sample(frac=1).reset_index(drop=True)
-
-    pickle.dump(df, open(DSOutputPath+outName, "wb" ))
+        pickle.dump(df, open(DSOutputPath+outName, "wb" ))

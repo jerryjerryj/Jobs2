@@ -3,7 +3,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
 
-def TokenizeSentences(rawSentences):
+def TokenizeSentences(rawSentences, needStemming):
     sentences = []
     st = nltk.stem.SnowballStemmer('russian')
 
@@ -18,9 +18,9 @@ def TokenizeSentences(rawSentences):
             if tokenized in stopwords.words('russian'):
                 continue
 
-            if (token >= 'а' and token <= 'я'):
+            if (token >= 'а' and token <= 'я') and needStemming:
                 cleaned_set.append(st.stem(tokenized))
-            elif(token >= 'a' and token <= 'z'):
+            elif ((token >= 'а' and token <= 'я') or (token >= 'a' and token <= 'z')):
                 cleaned_set.append(tokenized)
 
         if cleaned_set.__len__()>0:
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     '''print('БЫЛА ЛИ ПРОВЕДЕНА ОЧИСТКА ДАННЫХ?'
           '\n1. ссылки типо http://www.rbc.ru/magazine/2016/04/56ead0549a79474e4031fc94')'''
-    TARGET = '\Vacancies'
+    TARGET = '\Wiki'
 
     pathSource = 'F:\My_Pro\Python\Jobs2\Data'
     pathTokenized = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\Tokenized'
@@ -46,6 +46,6 @@ if __name__ == "__main__":
             content = [x.replace('\t',' ') for x in content]
             totalSentences.extend(content)
 
-    tokenized = TokenizeSentences(totalSentences)
-    pickle.dump( tokenized, open(pathTokenized+TARGET+'.p', "wb" ) )
+    tokenized = TokenizeSentences(totalSentences,False)
+    pickle.dump( tokenized, open(pathTokenized+TARGET+'.ns.p', "wb" ) )
 

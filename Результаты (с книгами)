@@ -1,0 +1,985 @@
+Total n/o words in Администратор БД : 547783
+Total n/o words in Программист : 400388
+Total n/o words in Разработчик Web и мультимедийных приложений : 249620
+Total n/o words in Руководитель проектов в области информационных технологий : 304830
+Total n/o words in Системный администратор ИКТ систем : 324551
+Total n/o words in Системный аналитик : 212296
+Total n/o words in Специалист по большим данным : 241927
+Total n/o words in Специалист по защите информации в автоматизированных системах : 341236
+Total n/o words in Специалист по интернет-маркетингу : 595856
+Total n/o words in Специалист по информационным ресурсам : 180251
+Total n/o words in Специалист по тестированию в области информационных технологий : 203879
+Total n/o words in Технический писатель (Специалист по технической документации в области ИТ) : 194773
+
+ЛОГИСТИЧЕСКАЯ РЕГРЕССИЯ:
+
+
+\Администратор БД.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.60	0.55	  10
+	    1	 1.00	0.77	0.87	  13
+	    2	 0.69	0.90	0.78	  10
+	    3	 1.00	0.60	0.75	   5
+	    4	 1.00	0.70	0.82	  10
+
+avg / total	 0.83	0.73	0.76	  48
+
+\Администратор БД.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  10
+	    1	 0.00	0.00	0.00	  13
+	    2	 0.00	0.00	0.00	  10
+	    3	 0.00	0.00	0.00	   5
+	    4	 0.00	0.00	0.00	  10
+
+avg / total	 0.00	0.00	0.00	  48
+
+\Администратор БД.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.40	0.60	0.48	  10
+	    1	 1.00	0.38	0.56	  13
+	    2	 0.67	0.60	0.63	  10
+	    3	 0.60	0.60	0.60	   5
+	    4	 0.75	0.60	0.67	  10
+
+avg / total	 0.71	0.54	0.58	  48
+
+\Администратор БД.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.44	0.70	0.54	  10
+	    1	 1.00	0.38	0.56	  13
+	    2	 0.70	0.70	0.70	  10
+	    3	 0.60	0.60	0.60	   5
+	    4	 0.75	0.60	0.67	  10
+
+avg / total	 0.73	0.58	0.61	  48
+
+\Администратор БД.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  10
+	    1	 0.00	0.00	0.00	  13
+	    2	 0.56	0.50	0.53	  10
+	    3	 0.00	0.00	0.00	   5
+	    4	 1.00	0.10	0.18	  10
+
+avg / total	 0.32	0.12	0.15	  48
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Программист.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.46	0.35	0.40	  17
+	    1	 1.00	0.09	0.17	  11
+	    2	 1.00	1.00	1.00	   2
+	    3	 0.67	1.00	0.80	   2
+
+avg / total	 0.69	0.34	0.38	  32
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Программист.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  17
+	    1	 0.00	0.00	0.00	  11
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.00	0.00	0.00	   2
+
+avg / total	 0.00	0.00	0.00	  32
+
+\Программист.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.47	0.41	0.44	  17
+	    1	 0.67	0.36	0.47	  11
+	    2	 1.00	1.00	1.00	   2
+	    3	 0.15	1.00	0.27	   2
+
+avg / total	 0.55	0.47	0.47	  32
+
+\Программист.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.53	0.47	0.50	  17
+	    1	 0.50	0.27	0.35	  11
+	    2	 1.00	1.00	1.00	   2
+	    3	 0.17	1.00	0.29	   2
+
+avg / total	 0.53	0.47	0.47	  32
+
+\Программист.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.46	0.35	0.40	  17
+	    1	 0.00	0.00	0.00	  11
+	    2	 0.00	0.00	0.00	   2
+	    3	 1.00	0.50	0.67	   2
+
+avg / total	 0.31	0.22	0.25	  32
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Разработчик Web и мультимедийных приложений.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.55	0.35	0.43	  17
+	    1	 0.60	0.43	0.50	   7
+	    2	 0.75	0.38	0.50	   8
+	    3	 0.50	0.40	0.44	   5
+
+avg / total	 0.59	0.38	0.46	  37
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Разработчик Web и мультимедийных приложений.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  17
+	    1	 0.00	0.00	0.00	   7
+	    2	 0.00	0.00	0.00	   8
+	    3	 0.00	0.00	0.00	   5
+
+avg / total	 0.00	0.00	0.00	  37
+
+\Разработчик Web и мультимедийных приложений.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.43	0.18	0.25	  17
+	    1	 0.25	0.71	0.37	   7
+	    2	 0.21	0.38	0.27	   8
+	    3	 0.25	0.20	0.22	   5
+
+avg / total	 0.32	0.32	0.27	  37
+
+\Разработчик Web и мультимедийных приложений.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.43	0.18	0.25	  17
+	    1	 0.19	0.57	0.29	   7
+	    2	 0.13	0.25	0.17	   8
+	    3	 0.33	0.20	0.25	   5
+
+avg / total	 0.31	0.27	0.24	  37
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Разработчик Web и мультимедийных приложений.ft
+		 precision    recall  f1-score   support
+
+	    0	 1.00	0.24	0.38	  17
+	    1	 0.25	0.29	0.27	   7
+	    2	 0.00	0.00	0.00	   8
+	    3	 0.00	0.00	0.00	   5
+
+avg / total	 0.51	0.16	0.23	  37
+
+\Системный администратор ИКТ систем.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 1.00	0.25	0.40	   8
+	    3	 0.67	0.33	0.44	   6
+	    4	 0.67	0.67	0.67	   3
+	    5	 1.00	0.33	0.50	   3
+	    6	 0.20	0.20	0.20	   5
+
+avg / total	 0.53	0.24	0.30	  34
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Системный администратор ИКТ систем.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.00	0.00	0.00	   8
+	    3	 0.00	0.00	0.00	   6
+	    4	 0.00	0.00	0.00	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 0.00	0.00	0.00	   5
+
+avg / total	 0.00	0.00	0.00	  34
+
+\Системный администратор ИКТ систем.w2v
+		 precision    recall  f1-score   support
+
+	    0	 1.00	0.17	0.29	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.75	0.38	0.50	   8
+	    3	 1.00	0.17	0.29	   6
+	    4	 0.67	0.67	0.67	   3
+	    5	 1.00	0.33	0.50	   3
+	    6	 0.50	0.40	0.44	   5
+
+avg / total	 0.75	0.29	0.39	  34
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Системный администратор ИКТ систем.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.50	0.50	0.50	   8
+	    3	 0.50	0.17	0.25	   6
+	    4	 0.67	0.67	0.67	   3
+	    5	 1.00	0.33	0.50	   3
+	    6	 0.50	0.40	0.44	   5
+
+avg / total	 0.43	0.29	0.33	  34
+
+\Системный администратор ИКТ систем.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.50	0.38	0.43	   8
+	    3	 0.00	0.00	0.00	   6
+	    4	 1.00	0.33	0.50	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 0.00	0.00	0.00	   5
+
+avg / total	 0.21	0.12	0.14	  34
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по большим данным.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.45	0.25	0.32	  40
+	    1	 0.43	0.33	0.38	  30
+	    2	 0.12	0.09	0.11	  11
+	    3	 0.38	0.25	0.30	  12
+
+avg / total	 0.40	0.26	0.31	  93
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по большим данным.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  40
+	    1	 0.00	0.00	0.00	  30
+	    2	 0.00	0.00	0.00	  11
+	    3	 0.00	0.00	0.00	  12
+
+avg / total	 0.00	0.00	0.00	  93
+
+\Специалист по большим данным.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.78	0.45	0.57	  40
+	    1	 0.80	0.40	0.53	  30
+	    2	 0.30	0.27	0.29	  11
+	    3	 0.17	0.25	0.20	  12
+
+avg / total	 0.65	0.39	0.48	  93
+
+\Специалист по большим данным.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.69	0.55	0.61	  40
+	    1	 0.79	0.37	0.50	  30
+	    2	 0.23	0.27	0.25	  11
+	    3	 0.16	0.25	0.19	  12
+
+avg / total	 0.60	0.42	0.48	  93
+
+\Специалист по большим данным.ft
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+		 precision    recall  f1-score   support
+  'precision', 'predicted', average, warn_for)
+
+	    0	 0.00	0.00	0.00	  40
+	    1	 0.35	0.83	0.50	  30
+	    2	 0.00	0.00	0.00	  11
+	    3	 0.00	0.00	0.00	  12
+
+avg / total	 0.11	0.27	0.16	  93
+
+\Специалист по интернет-маркетингу.tfidf
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+		 precision    recall  f1-score   support
+
+	    0	 0.20	0.10	0.13	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.50	0.20	0.29	  10
+	    3	 0.25	0.30	0.27	  10
+	    4	 0.09	0.10	0.10	  10
+	    5	 0.60	0.30	0.40	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.29	0.20	0.24	  10
+	    8	 0.33	0.20	0.25	  10
+	    9	 0.40	0.40	0.40	  10
+	   10	 0.80	0.40	0.53	  10
+
+avg / total	 0.31	0.20	0.24	 110
+
+\Специалист по интернет-маркетингу.d2v
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+		 precision    recall  f1-score   support
+  'precision', 'predicted', average, warn_for)
+
+	    0	 0.00	0.00	0.00	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.00	0.00	0.00	  10
+	    3	 0.00	0.00	0.00	  10
+	    4	 0.00	0.00	0.00	  10
+	    5	 0.00	0.00	0.00	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.00	0.00	0.00	  10
+	    8	 0.00	0.00	0.00	  10
+	    9	 0.00	0.00	0.00	  10
+	   10	 0.00	0.00	0.00	  10
+
+avg / total	 0.00	0.00	0.00	 110
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по интернет-маркетингу.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.38	0.30	0.33	  10
+	    1	 0.50	0.20	0.29	  10
+	    2	 0.57	0.40	0.47	  10
+	    3	 0.14	0.30	0.19	  10
+	    4	 0.33	0.30	0.32	  10
+	    5	 0.50	0.50	0.50	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.17	0.10	0.12	  10
+	    8	 0.17	0.10	0.12	  10
+	    9	 0.17	0.20	0.18	  10
+	   10	 0.62	0.50	0.56	  10
+
+avg / total	 0.32	0.26	0.28	 110
+
+\Специалист по интернет-маркетингу.w2vtfidf
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+		 precision    recall  f1-score   support
+
+  'precision', 'predicted', average, warn_for)
+	    0	 0.27	0.40	0.32	  10
+	    1	 0.20	0.20	0.20	  10
+	    2	 0.50	0.40	0.44	  10
+	    3	 0.20	0.40	0.27	  10
+	    4	 0.36	0.40	0.38	  10
+	    5	 0.45	0.50	0.48	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.10	0.10	0.10	  10
+	    8	 0.10	0.10	0.10	  10
+	    9	 0.13	0.20	0.16	  10
+	   10	 0.58	0.70	0.64	  10
+
+avg / total	 0.26	0.31	0.28	 110
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по интернет-маркетингу.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.00	0.00	0.00	  10
+	    3	 0.14	0.10	0.12	  10
+	    4	 0.00	0.00	0.00	  10
+	    5	 0.00	0.00	0.00	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.00	0.00	0.00	  10
+	    8	 0.00	0.00	0.00	  10
+	    9	 0.00	0.00	0.00	  10
+	   10	 0.00	0.00	0.00	  10
+
+avg / total	 0.01	0.01	0.01	 110
+
+\Специалист по информационным ресурсам.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.25	0.17	0.20	  12
+	    1	 0.45	0.33	0.38	  15
+	    2	 0.30	0.38	0.33	   8
+
+avg / total	 0.35	0.29	0.31	  35
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по информационным ресурсам.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  12
+	    1	 0.00	0.00	0.00	  15
+	    2	 0.00	0.00	0.00	   8
+
+avg / total	 0.00	0.00	0.00	  35
+
+\Специалист по информационным ресурсам.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.60	0.25	0.35	  12
+	    1	 0.38	0.40	0.39	  15
+	    2	 0.42	0.62	0.50	   8
+
+avg / total	 0.46	0.40	0.40	  35
+
+\Специалист по информационным ресурсам.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.17	0.25	  12
+	    1	 0.38	0.40	0.39	  15
+	    2	 0.45	0.62	0.53	   8
+
+avg / total	 0.44	0.37	0.37	  35
+
+\Специалист по информационным ресурсам.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  12
+	    1	 0.56	0.33	0.42	  15
+	    2	 0.28	0.62	0.38	   8
+
+avg / total	 0.30	0.29	0.27	  35
+
+\Специалист по тестированию в области информационных технологий.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 1.00	0.12	0.22	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.50	0.33	0.40	   3
+
+avg / total	 0.50	0.11	0.16	  19
+
+\Специалист по тестированию в области информационных технологий.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.00	0.00	0.00	   3
+
+avg / total	 0.00	0.00	0.00	  19
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по тестированию в области информационных технологий.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.17	0.17	0.17	   6
+	    1	 0.80	0.50	0.62	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.50	0.67	0.57	   3
+
+avg / total	 0.47	0.37	0.40	  19
+
+\Специалист по тестированию в области информационных технологий.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.67	0.50	0.57	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.40	0.67	0.50	   3
+
+avg / total	 0.34	0.32	0.32	  19
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по тестированию в области информационных технологий.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.00	0.00	0.00	   3
+
+avg / total	 0.00	0.00	0.00	  19
+
+
+Process finished with exit code 0
+
+
+GRADIENT BOOSTING
+
+C:\Users\Acer\Anaconda3\python.exe F:/My_Pro/Python/Jobs2/Scripts/Classification/4.PStoDemandsMultilabeled/Classify.py
+\Администратор БД.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.54	0.70	0.61	  10
+	    1	 0.88	0.54	0.67	  13
+	    2	 0.57	0.40	0.47	  10
+	    3	 1.00	1.00	1.00	   5
+	    4	 1.00	0.40	0.57	  10
+
+avg / total	 0.78	0.56	0.63	  48
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Администратор БД.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  10
+	    1	 0.25	0.08	0.12	  13
+	    2	 0.19	0.60	0.29	  10
+	    3	 0.20	0.20	0.20	   5
+	    4	 0.54	0.70	0.61	  10
+
+avg / total	 0.24	0.31	0.24	  48
+
+\Администратор БД.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.67	0.20	0.31	  10
+	    1	 0.67	0.46	0.55	  13
+	    2	 0.29	0.60	0.39	  10
+	    3	 0.07	0.20	0.11	   5
+	    4	 0.44	0.40	0.42	  10
+
+avg / total	 0.48	0.40	0.39	  48
+
+\Администратор БД.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.37	0.70	0.48	  10
+	    1	 0.67	0.31	0.42	  13
+	    2	 0.18	0.20	0.19	  10
+	    3	 0.09	0.20	0.13	   5
+	    4	 0.33	0.10	0.15	  10
+
+avg / total	 0.37	0.31	0.30	  48
+
+\Администратор БД.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.28	0.50	0.36	  10
+	    1	 0.50	0.15	0.24	  13
+	    2	 0.29	0.20	0.24	  10
+	    3	 0.12	0.20	0.15	   5
+	    4	 0.45	0.50	0.48	  10
+
+avg / total	 0.36	0.31	0.30	  48
+
+\Программист.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.43	0.18	0.25	  17
+	    1	 0.00	0.00	0.00	  11
+	    2	 1.00	1.00	1.00	   2
+	    3	 0.00	0.00	0.00	   2
+
+avg / total	 0.29	0.16	0.20	  32
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Программист.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.63	0.71	0.67	  17
+	    1	 0.29	0.18	0.22	  11
+	    2	 0.08	0.50	0.14	   2
+	    3	 0.00	0.00	0.00	   2
+
+avg / total	 0.44	0.47	0.44	  32
+
+\Программист.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.52	0.65	0.58	  17
+	    1	 0.60	0.27	0.37	  11
+	    2	 0.67	1.00	0.80	   2
+	    3	 0.33	1.00	0.50	   2
+
+avg / total	 0.55	0.56	0.52	  32
+
+\Программист.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.17	0.06	0.09	  17
+	    1	 0.75	0.55	0.63	  11
+	    2	 0.50	0.50	0.50	   2
+	    3	 0.20	1.00	0.33	   2
+
+avg / total	 0.39	0.31	0.32	  32
+
+\Программист.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.59	0.76	0.67	  17
+	    1	 0.28	0.45	0.34	  11
+	    2	 0.00	0.00	0.00	   2
+	    3	 1.00	1.00	1.00	   2
+
+avg / total	 0.47	0.62	0.54	  32
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Разработчик Web и мультимедийных приложений.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.60	0.35	0.44	  17
+	    1	 1.00	0.29	0.44	   7
+	    2	 0.83	0.62	0.71	   8
+	    3	 0.00	0.00	0.00	   5
+
+avg / total	 0.65	0.35	0.44	  37
+
+\Разработчик Web и мультимедийных приложений.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.54	0.76	0.63	  17
+	    1	 0.33	0.71	0.45	   7
+	    2	 0.25	0.12	0.17	   8
+	    3	 0.40	0.40	0.40	   5
+
+avg / total	 0.42	0.57	0.47	  37
+
+\Разработчик Web и мультимедийных приложений.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.56	0.29	0.38	  17
+	    1	 0.19	0.86	0.31	   7
+	    2	 0.12	0.12	0.12	   8
+	    3	 0.23	0.60	0.33	   5
+
+avg / total	 0.35	0.41	0.31	  37
+
+\Разработчик Web и мультимедийных приложений.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.29	0.37	  17
+	    1	 0.17	0.71	0.28	   7
+	    2	 0.10	0.12	0.11	   8
+	    3	 0.20	0.60	0.30	   5
+
+avg / total	 0.31	0.38	0.29	  37
+
+\Разработчик Web и мультимедийных приложений.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.38	0.29	0.33	  17
+	    1	 0.19	0.43	0.26	   7
+	    2	 0.25	0.12	0.17	   8
+	    3	 0.13	0.40	0.20	   5
+
+avg / total	 0.28	0.30	0.27	  37
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Системный администратор ИКТ систем.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 1.00	0.17	0.29	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 1.00	0.12	0.22	   8
+	    3	 0.67	0.33	0.44	   6
+	    4	 1.00	0.33	0.50	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 0.25	0.20	0.22	   5
+
+avg / total	 0.65	0.18	0.26	  34
+
+\Системный администратор ИКТ систем.d2v
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+		 precision    recall  f1-score   support
+  'precision', 'predicted', average, warn_for)
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.50	0.25	0.33	   8
+	    3	 0.00	0.00	0.00	   6
+	    4	 0.00	0.00	0.00	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 0.29	0.40	0.33	   5
+
+avg / total	 0.16	0.12	0.13	  34
+
+\Системный администратор ИКТ систем.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.44	0.50	0.47	   8
+	    3	 1.00	0.17	0.29	   6
+	    4	 0.00	0.00	0.00	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 0.38	0.60	0.46	   5
+
+avg / total	 0.34	0.24	0.23	  34
+
+\Системный администратор ИКТ систем.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.20	0.33	0.25	   3
+	    2	 0.14	0.12	0.13	   8
+	    3	 0.43	0.50	0.46	   6
+	    4	 0.00	0.00	0.00	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 0.00	0.00	0.00	   5
+
+avg / total	 0.13	0.15	0.13	  34
+
+\Системный администратор ИКТ систем.ft
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+		 precision    recall  f1-score   support
+  'precision', 'predicted', average, warn_for)
+
+	    0	 0.25	0.50	0.33	   6
+	    1	 0.00	0.00	0.00	   3
+	    2	 0.25	0.25	0.25	   8
+	    3	 0.56	0.83	0.67	   6
+	    4	 0.33	0.33	0.33	   3
+	    5	 0.00	0.00	0.00	   3
+	    6	 1.00	0.40	0.57	   5
+
+avg / total	 0.38	0.38	0.35	  34
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по большим данным.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.10	0.17	  40
+	    1	 1.00	0.03	0.06	  30
+	    2	 0.00	0.00	0.00	  11
+	    3	 0.00	0.00	0.00	  12
+
+avg / total	 0.54	0.05	0.09	  93
+
+\Специалист по большим данным.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.44	0.38	0.41	  40
+	    1	 0.38	0.70	0.49	  30
+	    2	 0.00	0.00	0.00	  11
+	    3	 0.20	0.50	0.29	  12
+
+avg / total	 0.34	0.45	0.37	  93
+
+\Специалист по большим данным.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.62	0.12	0.21	  40
+	    1	 0.41	0.37	0.39	  30
+	    2	 0.25	0.09	0.13	  11
+	    3	 0.22	0.42	0.29	  12
+
+avg / total	 0.46	0.24	0.27	  93
+
+\Специалист по большим данным.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.67	0.15	0.24	  40
+	    1	 0.46	0.43	0.45	  30
+	    2	 0.23	0.27	0.25	  11
+	    3	 0.20	0.42	0.27	  12
+
+avg / total	 0.49	0.29	0.31	  93
+
+\Специалист по большим данным.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.55	0.15	0.24	  40
+	    1	 0.29	0.47	0.35	  30
+	    2	 0.17	0.45	0.25	  11
+	    3	 0.17	0.42	0.24	  12
+
+avg / total	 0.37	0.32	0.28	  93
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+\Специалист по интернет-маркетингу.tfidf
+  'precision', 'predicted', average, warn_for)
+		 precision    recall  f1-score   support
+
+	    0	 0.11	0.10	0.11	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.00	0.00	0.00	  10
+	    3	 0.33	0.10	0.15	  10
+	    4	 0.00	0.00	0.00	  10
+	    5	 0.00	0.00	0.00	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.33	0.10	0.15	  10
+	    8	 0.25	0.10	0.14	  10
+	    9	 0.40	0.20	0.27	  10
+	   10	 0.60	0.30	0.40	  10
+
+avg / total	 0.18	0.08	0.11	 110
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по интернет-маркетингу.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.33	0.20	0.25	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.17	0.10	0.12	  10
+	    3	 0.08	0.10	0.09	  10
+	    4	 0.00	0.00	0.00	  10
+	    5	 0.12	0.20	0.15	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.12	0.20	0.15	  10
+	    8	 0.00	0.00	0.00	  10
+	    9	 0.11	0.20	0.14	  10
+	   10	 0.00	0.00	0.00	  10
+
+avg / total	 0.08	0.09	0.08	 110
+
+\Специалист по интернет-маркетингу.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.21	0.40	0.28	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.31	0.40	0.35	  10
+	    3	 0.07	0.10	0.08	  10
+	    4	 0.10	0.10	0.10	  10
+	    5	 0.08	0.10	0.09	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.00	0.00	0.00	  10
+	    8	 0.17	0.20	0.18	  10
+	    9	 0.00	0.00	0.00	  10
+	   10	 0.20	0.20	0.20	  10
+
+avg / total	 0.10	0.14	0.12	 110
+
+\Специалист по интернет-маркетингу.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.30	0.60	0.40	  10
+	    1	 0.00	0.00	0.00	  10
+	    2	 0.20	0.30	0.24	  10
+	    3	 0.12	0.30	0.17	  10
+	    4	 0.31	0.40	0.35	  10
+	    5	 0.12	0.20	0.15	  10
+	    6	 0.00	0.00	0.00	  10
+	    7	 0.17	0.20	0.18	  10
+	    8	 0.20	0.10	0.13	  10
+	    9	 0.07	0.10	0.08	  10
+	   10	 0.40	0.40	0.40	  10
+
+avg / total	 0.17	0.24	0.19	 110
+
+\Специалист по интернет-маркетингу.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.07	0.20	0.10	  10
+	    1	 0.14	0.30	0.19	  10
+	    2	 0.00	0.00	0.00	  10
+	    3	 0.19	0.50	0.28	  10
+	    4	 0.08	0.20	0.11	  10
+	    5	 0.31	0.40	0.35	  10
+	    6	 0.11	0.10	0.11	  10
+	    7	 0.00	0.00	0.00	  10
+	    8	 0.00	0.00	0.00	  10
+	    9	 0.14	0.30	0.19	  10
+	   10	 0.26	0.60	0.36	  10
+
+avg / total	 0.12	0.24	0.15	 110
+
+\Специалист по информационным ресурсам.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.33	0.40	  12
+	    1	 0.71	0.33	0.45	  15
+	    2	 0.00	0.00	0.00	   8
+
+avg / total	 0.48	0.26	0.33	  35
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по информационным ресурсам.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  12
+	    1	 0.42	0.33	0.37	  15
+	    2	 0.25	0.50	0.33	   8
+
+avg / total	 0.24	0.26	0.23	  35
+
+\Специалист по информационным ресурсам.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.25	0.33	  12
+	    1	 0.43	0.60	0.50	  15
+	    2	 0.39	0.88	0.54	   8
+
+avg / total	 0.44	0.54	0.45	  35
+
+\Специалист по информационным ресурсам.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.57	0.33	0.42	  12
+	    1	 0.45	0.33	0.38	  15
+	    2	 0.11	0.12	0.12	   8
+
+avg / total	 0.42	0.29	0.34	  35
+
+\Специалист по информационным ресурсам.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	  12
+	    1	 0.41	0.60	0.49	  15
+	    2	 0.33	0.12	0.18	   8
+
+avg / total	 0.25	0.29	0.25	  35
+
+\Специалист по тестированию в области информационных технологий.tfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.00	0.00	0.00	   6
+	    1	 0.00	0.00	0.00	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.00	0.00	0.00	   3
+
+avg / total	 0.00	0.00	0.00	  19
+
+C:\Users\Acer\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+\Специалист по тестированию в области информационных технологий.d2v
+		 precision    recall  f1-score   support
+
+	    0	 0.44	0.67	0.53	   6
+	    1	 0.67	0.25	0.36	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.17	0.33	0.22	   3
+
+avg / total	 0.45	0.37	0.36	  19
+
+\Специалист по тестированию в области информационных технологий.w2v
+		 precision    recall  f1-score   support
+
+	    0	 0.25	0.33	0.29	   6
+	    1	 0.00	0.00	0.00	   8
+	    2	 0.22	1.00	0.36	   2
+	    3	 0.50	0.33	0.40	   3
+
+avg / total	 0.18	0.26	0.19	  19
+
+\Специалист по тестированию в области информационных технологий.w2vtfidf
+		 precision    recall  f1-score   support
+
+	    0	 0.20	0.17	0.18	   6
+	    1	 0.43	0.38	0.40	   8
+	    2	 0.00	0.00	0.00	   2
+	    3	 0.50	0.33	0.40	   3
+
+avg / total	 0.32	0.26	0.29	  19
+
+\Специалист по тестированию в области информационных технологий.ft
+		 precision    recall  f1-score   support
+
+	    0	 0.50	0.33	0.40	   6
+	    1	 0.25	0.12	0.17	   8
+	    2	 0.40	1.00	0.57	   2
+	    3	 0.20	0.33	0.25	   3
+
+avg / total	 0.34	0.32	0.30	  19
+
+
+Process finished with exit code 0

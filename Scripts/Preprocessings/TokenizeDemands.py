@@ -8,15 +8,15 @@ if __name__ == "__main__":
     pathTokenized = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TokenizedDemands'
 
     # неизменные данные
-    '''filesPaths = glob.glob(pathSource+ profStandarts+"\*.txt")
+    filesPaths = glob.glob(pathSource+ profStandarts+"\*.txt")
     for filePath in filesPaths:
         fileName = filePath.split('\\')[-1].split('.')[0]
         with open(filePath, encoding='utf-8') as f:
             content = f.readlines()
             content = [x.strip() for x in content]
             content = [x.replace('\t',' ') for x in content]
-            tokenized = TokenizeSentences(content)
-            pickle.dump( tokenized, open(pathTokenized+'\\'+fileName+'.p', "wb" ) )'''
+            tokenized = TokenizeSentences(content,False)
+            pickle.dump( tokenized, open(pathTokenized+'\\'+fileName+'.ns.p', "wb" ) )
 
     filesPaths = glob.glob(pathSource + profStandartsTest + "\*.txt")
     for filePath in filesPaths:
@@ -25,5 +25,5 @@ if __name__ == "__main__":
             content = f.readlines()
             content = [x.strip() for x in content]
             content = [x.replace('\t', ' ') for x in content]
-            tokenized = TokenizeSentences(content)
-            pickle.dump(tokenized, open(pathTokenized + '\\' + fileName + '.test.p', "wb"))
+            tokenized = TokenizeSentences(content, False)
+            pickle.dump(tokenized, open(pathTokenized + '\\' + fileName + '.test.ns.p', "wb"))
