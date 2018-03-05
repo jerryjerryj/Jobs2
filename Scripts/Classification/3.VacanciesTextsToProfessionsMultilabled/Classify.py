@@ -21,19 +21,20 @@ def ClassifyCross(pathToDataset, name):
     classes = MultiLabelBinarizer().fit_transform(dataset['classes'])
     vectors = dataset['vectors'].tolist()
 
-    #ovr = OneVsRestClassifier(LogisticRegression())
-    ovr = OneVsRestClassifier(GradientBoostingClassifier())
+    ovr = OneVsRestClassifier(LogisticRegression())
+    #ovr = OneVsRestClassifier(GradientBoostingClassifier())
     '''scores = cross_val_score(ovr, vectors, classes, cv=5,   scoring='f1_macro')
-    print(name)
-    print(scores)
-    print('Average F1-macro: '+str(scores.mean())+'\n')'''
+print(name)
+print(scores)
+print('Average F1-macro: '+str(scores.mean())+'\n')
 
-    #ensemble_jaccard_score = jaccard_similarity_score(Y_test, Y_pred_ovr)
-    #print(ensemble_jaccard_score)
-    #report = classification_report(Y_test, Y_pred_ovr)
-    #print(report)
-    #pickle.dump(ovr, open(modelName+'.p', 'wb'))
+#ensemble_jaccard_score = jaccard_similarity_score(Y_test, Y_pred_ovr)
+#print(ensemble_jaccard_score)
+#report = classification_report(Y_test, Y_pred_ovr)
+#print(report)
+#pickle.dump(ovr, open(modelName+'.p', 'wb'))
 
+'''
     X_train, X_test, Y_train, Y_test = train_test_split(vectors, classes, test_size=0.3)
     ovr.fit(X_train, Y_train)
     Y_pred_ovr = ovr.predict(X_test)

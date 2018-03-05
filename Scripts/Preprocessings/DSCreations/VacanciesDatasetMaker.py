@@ -12,7 +12,7 @@ modelPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\M
 ftModelPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\FastText.model'
 modelTfIdfPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\TfIdf.model'
 DSOutputPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\DSCreations\DataSets'
-modelTypes = ['w2vtfidf', 'w2v', 'tfidf', 'ft','d2v']
+modelTypes = ['w2vtfidf']#, 'w2v', 'tfidf', 'ft','d2v']
 #####
 
 

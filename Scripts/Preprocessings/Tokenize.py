@@ -32,7 +32,11 @@ if __name__ == "__main__":
 
     '''print('БЫЛА ЛИ ПРОВЕДЕНА ОЧИСТКА ДАННЫХ?'
           '\n1. ссылки типо http://www.rbc.ru/magazine/2016/04/56ead0549a79474e4031fc94')'''
-    TARGET = '\Wiki'
+    TARGET = '\Vacancies'
+    STEMMING  = True
+    OUT_EXTENSION = '.p'
+    if not STEMMING:
+        OUT_EXTENSION = '.ns.p'
 
     pathSource = 'F:\My_Pro\Python\Jobs2\Data'
     pathTokenized = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\Tokenized'
@@ -46,6 +50,6 @@ if __name__ == "__main__":
             content = [x.replace('\t',' ') for x in content]
             totalSentences.extend(content)
 
-    tokenized = TokenizeSentences(totalSentences,False)
-    pickle.dump( tokenized, open(pathTokenized+TARGET+'.ns.p', "wb" ) )
+    tokenized = TokenizeSentences(totalSentences,STEMMING)
+    pickle.dump( tokenized, open(pathTokenized+TARGET+OUT_EXTENSION, "wb" ) )
 
