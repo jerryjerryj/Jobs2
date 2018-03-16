@@ -6,6 +6,7 @@ from keras.models import Sequential
 from keras.utils import np_utils
 from Scripts.RNN.Preprocess import NgramVocabulary
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MultiLabelBinarizer
 
 def MakeLSTM(MAX_VALUE,NB_CLASSES):
     EMBEDDING_VECTOR_LENGTH = 32
@@ -39,44 +40,40 @@ def MakeHiddenSimple(NB_CLASSES):
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 
-def MakeDataset(pilepathPS, filepathPStest, ngramsSize):
-    with open(pilepathPS, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-    with open(filepathPStest, 'r', encoding='utf-8') as f2:
-        lines.extend(f2.readlines())
+def MakeDataset(lines, ngramsSize,nb_classes):
     vectors = []
     classes = []
     vocabulary = NgramVocabulary(ngramsSize)
     for line in lines:
         parts = line.split('\t')
-        classes.append(int(parts[0]))
+        classesStr = parts[0]
+        classes.append([int(s) for s in classesStr.split(';')])
         vectors.append(vocabulary.GetIds(parts[1]))
 
     maxValue = vocabulary.vocabulary.__len__()
     vectors = keras.preprocessing.sequence.pad_sequences(vectors)
-    nb_classes = max(classes)+1
-    classes = np_utils.to_categorical(classes, nb_classes)
-    return vectors, classes, maxValue, nb_classes
+    classes = MultiLabelBinarizer().fit_transform(classes)
+    return vectors, classes, maxValue
 
-pathPS = 'F:\My_Pro\Python\Jobs2\Data\ProfStandarts'
-pathPSTest = 'F:\My_Pro\Python\Jobs2\Data\ProfStandartsTest'
-testFilesPaths = glob.glob(pathPSTest + "\*.txt")
-ngramSize = 5
+pathVacancies = 'F:\My_Pro\Python\Jobs2\Data\Vacancies'
+filepaths = glob.glob(pathVacancies + "\*.txt")
+ngramSize = 3
+NB_CLASSES =12
 
-results = []
-for path in testFilesPaths:
-    name = path.split('\\')[-1].split('.')[0]
+lines =[]
+for path in filepaths:
+    with open(path, 'r', encoding='utf-8') as f:
+        lines.extend(f.readlines())
 
-    vectors, classes, MAX_VALUE, NB_CLASSES = MakeDataset(path,pathPS+'\\'+name+'.txt', ngramSize)
-    X_train, X_test, y_train, y_test= train_test_split(vectors,classes,test_size=0.3)
+vectors, classes, MAX_VALUE = MakeDataset(lines, ngramSize,NB_CLASSES)
+X_train, X_test, y_train, y_test= train_test_split(vectors,classes,test_size=0.3)
 
-    #model = MakeLSTM(MAX_VALUE,NB_CLASSES)
-    model = MakeConvLSTM(MAX_VALUE,NB_CLASSES)
-    #model = MakeHiddenSimple(NB_CLASSES)
-    model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=2, batch_size=16)
+#model = MakeLSTM(MAX_VALUE,NB_CLASSES)
+model = MakeHiddenSimple(NB_CLASSES)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=2, batch_size=16)
 
-    scores = model.evaluate(X_test, y_test, verbose=0)
-    results.append(name + "\t%.2f%%" % (scores[1] * 100))
-
-results = '\n'.join(results)
-print(results)
+scores = model.evaluate(X_test, y_test, verbose=0)
+print("\t%.2f%%" % (scores[1] * 100))
+#conv Lstm 729/729 [==============================] - 786s 1s/step - loss: 0.2820 - acc: 0.9119 - val_loss: 0.2650 - val_acc: 0.9113
+#	91.13%
+#Lstm 91.37%
