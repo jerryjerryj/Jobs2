@@ -25,7 +25,7 @@ def MakeConvLSTM(MAX_VALUE,NB_CLASSES):
     model.add(LSTM(50, dropout=0.3, recurrent_dropout=0.3, return_sequences=True))
     model.add(Conv1D(filters=512, kernel_size=9, activation='relu'))
     model.add(GlobalMaxPooling1D())
-    model.add(Dense(NB_CLASSES, activation='softmax'))
+    model.add(Dense(NB_CLASSES, activation='sigmoid'))
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 

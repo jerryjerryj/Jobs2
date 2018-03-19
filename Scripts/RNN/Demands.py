@@ -12,7 +12,7 @@ def MakeLSTM(MAX_VALUE,NB_CLASSES):
     model = Sequential()
     model.add(Embedding(MAX_VALUE, EMBEDDING_VECTOR_LENGTH))
     model.add(LSTM(100))
-    model.add(Dense(NB_CLASSES, activation='softmax'))
+    model.add(Dense(NB_CLASSES, activation='sigmoid'))
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 def MakeConvLSTM(MAX_VALUE,NB_CLASSES):
@@ -23,7 +23,7 @@ def MakeConvLSTM(MAX_VALUE,NB_CLASSES):
     model.add(LSTM(50, dropout=0.3, recurrent_dropout=0.3, return_sequences=True))
     model.add(Conv1D(filters=512, kernel_size=9, activation='relu'))
     model.add(GlobalMaxPooling1D())
-    model.add(Dense(NB_CLASSES, activation='softmax'))
+    model.add(Dense(NB_CLASSES, activation='sigmoid'))
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 def MakeHiddenSimple(NB_CLASSES):
@@ -35,7 +35,7 @@ def MakeHiddenSimple(NB_CLASSES):
     model.add(Dense(N_HIDDEN))
     model.add(Activation('relu'))
     model.add(Dense(NB_CLASSES))
-    model.add(Activation('softmax'))
+    model.add(Activation('sigmoid'))
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 
@@ -70,8 +70,8 @@ for path in testFilesPaths:
     vectors, classes, MAX_VALUE, NB_CLASSES = MakeDataset(path,pathPS+'\\'+name+'.txt', ngramSize)
     X_train, X_test, y_train, y_test= train_test_split(vectors,classes,test_size=0.3)
 
-    #model = MakeLSTM(MAX_VALUE,NB_CLASSES)
-    model = MakeConvLSTM(MAX_VALUE,NB_CLASSES)
+    model = MakeLSTM(MAX_VALUE,NB_CLASSES)
+    #model = MakeConvLSTM(MAX_VALUE,NB_CLASSES)
     #model = MakeHiddenSimple(NB_CLASSES)
     model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=2, batch_size=16)
 
