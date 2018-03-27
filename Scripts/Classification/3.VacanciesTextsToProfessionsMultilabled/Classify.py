@@ -1,11 +1,14 @@
 import pickle
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import MultiLabelBinarizer
-from skmultilearn.problem_transform import BinaryRelevance
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import VotingClassifier
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_multilabel_classification
@@ -14,19 +17,19 @@ from sklearn.metrics import jaccard_similarity_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from Scripts.Classification.Plots import plot_confusion_matrix
-
+from sklearn.naive_bayes import GaussianNB
 
 def ClassifyCross(pathToDataset, name):
     dataset = pickle.load(open(pathToDataset, 'rb'))
     classes = MultiLabelBinarizer().fit_transform(dataset['classes'])
     vectors = dataset['vectors'].tolist()
 
+    #ovr = OneVsRestClassifier(KNeighborsClassifier())
     ovr = OneVsRestClassifier(LogisticRegression())
-    #ovr = OneVsRestClassifier(GradientBoostingClassifier())
-    '''scores = cross_val_score(ovr, vectors, classes, cv=5,   scoring='f1_macro')
-print(name)
-print(scores)
-print('Average F1-macro: '+str(scores.mean())+'\n')
+    scores = cross_val_score(ovr, vectors, classes, cv=5,   scoring='accuracy')
+    print(name)
+    print(scores)
+    print('Average F1-macro: '+str(scores.mean())+'\n')
 
 #ensemble_jaccard_score = jaccard_similarity_score(Y_test, Y_pred_ovr)
 #print(ensemble_jaccard_score)
@@ -40,7 +43,7 @@ print('Average F1-macro: '+str(scores.mean())+'\n')
     Y_pred_ovr = ovr.predict(X_test)
     report = classification_report(Y_test, Y_pred_ovr)
     print(Y_pred_ovr)
-    print(report)
+    print(report)'''
 
 W2VDataset = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\DSCreations\DataSets\W2V.dataset'
 W2VTFIDFDataset = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\DSCreations\DataSets\W2VTfIdf.dataset'

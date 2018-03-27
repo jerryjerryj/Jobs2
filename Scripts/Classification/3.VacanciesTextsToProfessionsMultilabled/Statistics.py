@@ -23,9 +23,13 @@ all = removed_all'''
 
 a = np.array(all)
 unique_elements, counts_elements = np.unique(a, return_counts=True)
+unique_elements = [u+1 for u in unique_elements]
 print("Frequency of unique values of the said array:")
 print(np.asarray((unique_elements, counts_elements)))
 
 plt.bar(unique_elements,counts_elements)
 plt.yticks(range(0,100,4))
+plt.xticks(range(0,13,1))
+plt.xlabel('Вакансия')
+plt.ylabel('Количество входящих текстов')
 plt.show()
