@@ -15,8 +15,8 @@ if __name__ == "__main__":
             content = f.readlines()
             content = [x.strip() for x in content]
             content = [x.replace('\t',' ') for x in content]
-            tokenized = TokenizeSentences(content,False)
-            pickle.dump( tokenized, open(pathTokenized+'\\'+fileName+'.ns.p', "wb" ) )
+            tokenized = TokenizeSentences(content,True)
+            pickle.dump( tokenized, open(pathTokenized+'\\'+fileName+'.p', "wb" ) )
 
     filesPaths = glob.glob(pathSource + profStandartsTest + "\*.txt")
     for filePath in filesPaths:
@@ -25,5 +25,5 @@ if __name__ == "__main__":
             content = f.readlines()
             content = [x.strip() for x in content]
             content = [x.replace('\t', ' ') for x in content]
-            tokenized = TokenizeSentences(content, False)
-            pickle.dump(tokenized, open(pathTokenized + '\\' + fileName + '.test.ns.p', "wb"))
+            tokenized = TokenizeSentences(content, True)
+            pickle.dump(tokenized, open(pathTokenized + '\\' + fileName + '.test.p', "wb"))

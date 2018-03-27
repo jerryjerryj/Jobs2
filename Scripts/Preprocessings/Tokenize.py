@@ -1,12 +1,13 @@
-import nltk, glob, pickle
+import nltk, glob, pickle, time
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from pymystem3 import Mystem
 
 
 def TokenizeSentences(rawSentences, needStemming):
     sentences = []
     st = nltk.stem.SnowballStemmer('russian')
-
+    #m = Mystem()
     for c in rawSentences:
         tokenized_sents = word_tokenize(c)
         cleaned_set = []
@@ -26,7 +27,37 @@ def TokenizeSentences(rawSentences, needStemming):
         if cleaned_set.__len__()>0:
             sentences.append(cleaned_set)
     return sentences
+def TokenizeSentencesLemmatized(rawSentences, needStemming):
+    print('total = ' +str(rawSentences.__len__()))
+    sentences = []
+    index = 0
+    #st = nltk.stem.SnowballStemmer('russian')
+    m = Mystem()
+    for c in rawSentences:
+        #start = time.time()
+        tokenized_sents = m.lemmatize(c)
+        cleaned_set = []
+        for tokenized in tokenized_sents:
+            if tokenized == "":
+                break
+            tokenized = tokenized.lower()
+            if tokenized in stopwords.words('russian'):
+                continue
 
+            token = tokenized[0]
+            if (token >= 'а' and token <= 'я') and needStemming:
+                cleaned_set.append(tokenized)
+            elif ((token >= 'а' and token <= 'я') or (token >= 'a' and token <= 'z')):
+                cleaned_set.append(tokenized)
+
+        if cleaned_set.__len__()>0:
+            sentences.append(cleaned_set)
+
+        #end = time.time()
+        #print('Time: ' + str(end - start))
+        print(index)
+        index+=1
+    return sentences
 
 if __name__ == "__main__":
 
@@ -50,6 +81,6 @@ if __name__ == "__main__":
             content = [x.replace('\t',' ') for x in content]
             totalSentences.extend(content)
 
-    tokenized = TokenizeSentences(totalSentences,STEMMING)
+    tokenized = TokenizeSentencesLemmatized(totalSentences,STEMMING)
     pickle.dump( tokenized, open(pathTokenized+TARGET+OUT_EXTENSION, "wb" ) )
 
