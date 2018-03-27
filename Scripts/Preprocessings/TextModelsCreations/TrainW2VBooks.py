@@ -12,7 +12,7 @@ for bookname in booknames:
     p = pickle.load(open(pathBook+bookname+'.p', "rb"))
     sentences.extend(p)
 
-    PrintSourceDataStats(sentences)
+    PrintSourceDataStats(bookname,sentences)
 
-    model = gensim.models.Word2Vec(sentences, min_count=2, workers=10, iter=100)
+    model = gensim.models.Word2Vec(sentences, min_count=2, workers=10, iter=100,size=500)
     model.save(pathOut+bookname+'.w2v')

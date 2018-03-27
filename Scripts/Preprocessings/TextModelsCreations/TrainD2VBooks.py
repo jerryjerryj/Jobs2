@@ -28,7 +28,7 @@ for bookname in booknames:
     PrintSourceDataStats(bookname,sentences)
 
     sentences = SentencesToD2VRepresentation(sentences)
-    model = Doc2Vec(window=20, min_count=2, workers=8, alpha=0.025, min_alpha=0.01, dm=0)
+    model = Doc2Vec(window=20, min_count=2, workers=8, alpha=0.025, min_alpha=0.01, dm=0, size=500)
     model.build_vocab(sentences)
     model.train(sentences, total_examples=len(sentences), epochs=20)
 

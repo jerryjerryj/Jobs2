@@ -8,5 +8,6 @@ sentences = CollectSentences(pathSource)
 
 PrintSourceDataStats('',sentences)
 
-model = gensim.models.Word2Vec(sentences, min_count=2, workers=10, iter=100)
+model = gensim.models.Word2Vec(sentences, min_count=2, workers=10, iter=100,size=500)
+print(model.wv['бд'])
 model.save(pathOut+'\\W2V.model')
