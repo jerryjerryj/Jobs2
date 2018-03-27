@@ -18,10 +18,10 @@ def MakeConv(MAX_VALUE,NB_CLASSES):
     model = Sequential()
     model.add(Embedding(MAX_VALUE, EMBEDDING_VECTOR_LENGTH))
     model.add(SpatialDropout1D(0.2))
-    model.add(Conv1D(filters=512, kernel_size=9, activation='sigmoid'))
+    model.add(Conv1D(filters=512, kernel_size=9, activation='relu'))
     model.add(GlobalMaxPooling1D())
-    model.add(Dense(NB_CLASSES, activation='softmax'))
-    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    model.add(Dense(NB_CLASSES, activation='sigmoid'))
+    model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 
 def MakeLSTM(MAX_VALUE,NB_CLASSES):
@@ -100,22 +100,22 @@ vectors, classes, MAX_VALUE =MakeDataset(lines, ngramSize,NB_CLASSES)
 ds = Dataset(vectors, classes, MAX_VALUE)
 pickle.dump(ds,open('dataset.p','wb'))
 exit()'''
-p = pickle.load(open('dataset.p','rb'))
+p = pickle.load(open('datasetML.p','rb'))
 vectors = p.vectors
 classes = p.classes
 MAX_VALUE = p.MAX_VALUE
 
 X_train, X_test, y_train, y_test= train_test_split(vectors,classes,test_size=0.3)
 
-model = MakeConv(MAX_VALUE,NB_CLASSES)
+model = MakeConvLSTM(MAX_VALUE,NB_CLASSES)
 #model = MakeHiddenSimple(NB_CLASSES)
-model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=30, batch_size=16)
+model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=20, batch_size=24)
+
+y_predicted = model.predict(X_test)
+pickle.dump(X_test,open('X_test','wb'))
+pickle.dump(y_test,open('y_test','wb'))
+pickle.dump(y_predicted,open('y_predicted','wb'))
+
 
 scores = model.evaluate(X_test, y_test, verbose=0)
 print("\t%.2f%%" % (scores[1] * 100))
-#conv Lstm 729/729 [==============================] - 786s 1s/step - loss: 0.2820 - acc: 0.9119 - val_loss: 0.2650 - val_acc: 0.9113
-#	91.13%
-#Lstm 91.37%
-
-
-#LSTM b_c sigmoid 91.16%
