@@ -12,7 +12,7 @@ modelPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\M
 ftModelPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\FastText.model'
 modelTfIdfPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\TextModelsCreations\Models\TfIdf.model'
 DSOutputPath = 'F:\My_Pro\Python\Jobs2\Scripts\Preprocessings\DSCreations\DataSets'
-modelTypes = ['tfidf']#'w2vtfidf', 'ft','d2v','w2v']
+modelTypes = ['w2vtfidf']#'tfidf', 'ft','d2v','w2v']
 #####
 
 
@@ -30,15 +30,16 @@ def SentenceToAverageWeightedVector(wv, sentence):
         return []
     return vector
 
-def SentenceToAverageTfIdfWeightedVector(wv, sentence, tfidf):
+def SentenceToAverageTfIdfWeightedVector(wv, sentence, tfidf, dictionary):
     vectors = pandas.DataFrame()
     index = 0
     try:
         for word in sentence:
-            if word not in tfidf.keys():
+            if word not in dictionary.keys():
                 tf_idf = 0
             else:
-                tf_idf = tfidf[word]
+                word_index = dictionary[word]
+                tf_idf = tfidf[word_index]
             if word in wv.vocab:
                 vectors[index] = wv[word]*tf_idf
             index += 1
@@ -105,8 +106,10 @@ if __name__ == "__main__":
     vacanciesTokenizedNS = pickle.load(open(vacanciesNsPicklesPath, "rb"))
     model = gensim.models.Word2Vec.load(modelPath)
     ftModel = gensim.models.FastText.load(ftModelPath)
-    tfIdf= pickle.load(open(modelTfIdfPath, 'rb'))
-    tfIdfKeys = GetTFIDFKeys(tfIdf)
+    tfIdfModel= pickle.load(open(modelTfIdfPath, 'rb'))
+    tfIdf = tfIdfModel['tfidf'].tolist()
+    tfIdfDict = tfIdfModel['dictionary']
+    #tfIdfKeys = GetTFIDFKeys(tfIdf)
 
     classes = GetMulticlasses(vacanciesMarkedDir)
 
@@ -119,17 +122,18 @@ if __name__ == "__main__":
                 vectors.append(SentenceToAverageWeightedVector(model.wv, vacancy))
             outName = '\\W2V.dataset'
         elif modelType == 'tfidf':
-            vectors = ToTfIdfReduced(tfIdf)
-            '''index = 0
+            #vectors = ToTfIdfReduced(tfIdf)
+            index = 0
             #vectors = list( SentenceToTfIdf(vacanciesTokenized))
             for vacancy in vacanciesTokenized:
-                vectors.append(SentenceToTfIdf(vacancy,tfIdf[index],tfIdfKeys))
-                index+=1'''
+                #vectors.append(SentenceToTfIdf(vacancy,tfIdf[index])#,tfIdfKeys))
+                vectors.append(tfIdf[index])
+                index+=1
             outName = '\\TfIdf.dataset'
         elif modelType == 'w2vtfidf':
             index = 0
             for vacancy in vacanciesTokenized:
-                vectors.append(SentenceToAverageTfIdfWeightedVector(model.wv, vacancy,tfIdf[index]))
+                vectors.append(SentenceToAverageTfIdfWeightedVector(model.wv, vacancy,tfIdf[index], tfIdfDict))
                 index+=1
             outName = '\\W2VTfIdf.dataset'
         elif modelType == 'ft':
