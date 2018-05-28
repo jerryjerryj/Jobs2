@@ -1,2 +1,7 @@
 # Jobs2
-https://drive.google.com/file/d/1cS9O9_e0KvJauHEUVZn6rY-F7vW0BHBQ/view?usp=sharing
+
+Классификация:
+https://drive.google.com/file/d/1nMfuKb-RJg-sqqot-Pc8xlLHDZPnRWnS/view
+
+Нейронные сети:
+https://drive.google.com/file/d/1OM7WFD25PQ5mFhIrdHLEqOSDNwo3DgZD/view
